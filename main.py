@@ -1,72 +1,3 @@
-
-# # from pymongo.mongo_client import MongoClient
-# # from pymongo.server_api import ServerApi
-# # from fastapi import FastAPI
-# # import certifi
-# # from mongoengine import Document, StringField, IntField
-# # from pydantic import BaseModel
-
-# # app = FastAPI()
-
-# # # from sqlalchemy import create_engine
-
-# # # CONNSTR = 'postgresql://praveen.rcse2020:X6ZQj2uhJCKH@ep-dry-glade-690954.us-east-2.aws.neon.tech/bloodsearch'
-# # # try:
-# # #     engine = create_engine(CONNSTR)
-# # # except Exception as e :
-# # #     print("Exception: ",e)
-# # uri = "mongodb+srv://praveen:qwerty1234@cluster0.4ygvrqb.mongodb.net/?retryWrites=true&w=majority"
-
-# # # Create a new client and connect to the server 
-# # client = MongoClient(uri, server_api=ServerApi('1'),tlsCAFile=certifi.where())
-
-# # # Send a ping to confirm a successful connection
-# # try:
-# #     client.admin.command('ping')
-# #     print("Pinged your deployment. You successfully connected to MongoDB!")
-# # except Exception as e:
-# #     print(e)
-# # class Add(Document):
-# #     name = StringField(required=True)
-
-# # class Added(BaseModel):
-# #     name: str
-
-# # @app.post('/add')
-# # async def add(value: Added):
-# #     obj = Add(name=value.name)
-# #     obj.save()
-# #     return
-# from mongoengine import connect
-# from mongoengine.document import Document
-# from mongoengine.fields import StringField
-# from pydantic import BaseModel
-# from fastapi import FastAPI
-# import certifi
-
-# # Establish a default connection
-# default_connection = connect(db='bloodsearch', host="mongodb+srv://praveen:qwerty1234@cluster0.4ygvrqb.mongodb.net/?retryWrites=true&w=majority",tlsCAFile=certifi.where())
-
-# class Add(Document):
-#     name = StringField(required=True)
-
-# class Added(BaseModel):
-#     name: str
-
-# app = FastAPI()
-
-# @app.post('/add')
-# async def add(value: Added):
-#     obj = Add(name=value.name)
-#     obj.save()
-#     return
-
-
-
-
-
-
-
 from mongoengine.document import Document
 from mongoengine import connect
 from fastapi import FastAPI
@@ -78,7 +9,7 @@ import certifi
 from mongoengine.fields import StringField
 
 # Establish a default connection
-default_connection = connect(db='bloodsearch', host="mongodb+srv://praveen:qwerty1234@cluster0.4ygvrqb.mongodb.net/?retryWrites=true&w=majority",tlsCAFile=certifi.where())
+default_connection = connect(db='blood', host="mongodb+srv://praveen:praveen15a@praveenscluster.osa29pv.mongodb.net/?retryWrites=true&w=majority",tlsCAFile=certifi.where())
 
 app = FastAPI()
 
